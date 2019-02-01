@@ -1,0 +1,18 @@
+
+    <div>
+      <h1>{{user.name}}</h1>
+      <h3>{{user.qualification}}</h3>
+      <button (click)="togglecheck()">Expand/Collapsed</button>
+      <div *ngIf=!check>
+      <p>{{user.institute}}</p>
+      <div *ngIf="user.Ph.length>0">
+       <div>
+         <p>Phone</p>
+        <!-- <p>{{user.Ph[0]}}</p>
+        <p>{{user.Ph[1]}}</p> -->
+        <p *ngFor="let phno of user.Ph">{{phno}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+  
