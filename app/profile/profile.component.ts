@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { checkAndUpdateBinding } from '@angular/core/src/view/util';
 
 @Component({
   selector: 'app-profile',
@@ -9,18 +8,19 @@ import { checkAndUpdateBinding } from '@angular/core/src/view/util';
 export class ProfileComponent implements OnInit {
   user:any;
   check:boolean=true;
-  constructor() { 
+  constructor()   
+  {
     this.user=
     {
-      name:'RIYA',
-      qualification:'MCA',
-      institute:'Amal Jyothi',
-      Ph:['123','123654']
-};
-  }
-togglecheck(){
-  this.check=!this.check;
-}
+      name:'Lekshmi',
+      job:'Software Developer',
+      address:'Lekshmi,padinjattinkara,kottarakara',
+      phone:['7558992896']
+    };
+   }
+   togglecheck(){
+     this.check=!this.check;
+   }
   ngOnInit() {
   }
 

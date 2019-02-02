@@ -1,18 +1,21 @@
+<!-- <p>
+  profile works!
+</p> -->
 
-    <div>
-      <h1>{{user.name}}</h1>
-      <h3>{{user.qualification}}</h3>
-      <button (click)="togglecheck()">Expand/Collapsed</button>
-      <div *ngIf=!check>
-      <p>{{user.institute}}</p>
-      <div *ngIf="user.Ph.length>0">
-       <div>
-         <p>Phone</p>
-        <!-- <p>{{user.Ph[0]}}</p>
-        <p>{{user.Ph[1]}}</p> -->
-        <p *ngFor="let phno of user.Ph">{{phno}}</p>
-      </div>
-    </div>
+  <div>
+    <h1>{{user.name}}</h1>
+    <h2>{{user.job}}</h2>
+    <button (click)="togglecheck()">Expand / Collapsed</button>
+    <div *ngIf=!check>
+    <p>{{user.address}}</p>
+    <div *ngIf="user.phone.length>0">
+  <div>
+    <p>phone:</p>
+    <!-- <p>{{user.phone[0]}}</p>
+    <p>{{user.phone[1]}}</p> -->
+<!-- ng For loop -->
+<p *ngFor="let phonenumber of user.phone">{{phonenumber}}</p>
   </div>
 </div>
-  
+</div>
+</div>
