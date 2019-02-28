@@ -1,0 +1,98 @@
+﻿@model mvcassignment.Models.Register
+
+@{
+    ViewBag.Title = "getstud";
+}
+
+<h2>getstud</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Register</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.name)
+                @Html.ValidationMessageFor(model => model.name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.add, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.add)
+                @Html.ValidationMessageFor(model => model.add)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gender, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(g => g.Gender, "Male")@Html.Label("Male")
+                @Html.RadioButtonFor(g => g.Gender, "Female")@Html.Label("Female")
+                @Html.ValidationMessageFor(model => model.Gender)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.courseList, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("courseList", new SelectList(Enum.GetNames(typeof(mvcassignment.Models.Course))), "--SELECT--")
+                @Html.ValidationMessageFor(model => model.courseList)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.email, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email)
+                @Html.ValidationMessageFor(model => model.email)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.uname, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.uname)
+                @Html.ValidationMessageFor(model => model.uname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.pwd, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pwd)
+                @Html.ValidationMessageFor(model => model.pwd)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cpwd, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cpwd)
+                @Html.ValidationMessageFor(model => model.cpwd)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
